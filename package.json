@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node script.js"
   },
-  "author": "Cindy Jang",
+  "author": "",
   "license": "Igit SC",
   "dependencies": {
     "express": "^4.17.1"
