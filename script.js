@@ -25,19 +25,19 @@ app.use(express.static(path.join(__dirname + '/views')));
 // });
 
 app.get('/', (req, res) => {
-  res.sendFile(`${__dirname}/index.html`);
+  res.sendFile(`${__dirname}/views/index.html`);
 });
 
 app.get('/room', (req, res) => {
-  res.sendFile(`${__dirname}/room.html`);
+  res.sendFile(`${__dirname}/views/room.html`);
 });
 
 app.get('/book', (req, res) => {
-  res.sendFile(`${__dirname}/booknow.html`);
+  res.sendFile(`${__dirname}/views/booknow.html`);
 });
 
 app.get('/confirm', (req, res) => {
-  res.sendFile(`${__dirname}/confirmation.html`);
+  res.sendFile(`${__dirname}/views/confirmation.html`);
 });
 
 app.listen(HTTP_PORT, onHttpStart);
