@@ -263,7 +263,8 @@
     <h3><b>Bear's Clean Room</b></h3>
     <br>
     <center><img src="images/bedroom.jpg" alt="living room" width="90%"/></center>
-    <div id="info" class="px-5 py-3 mx-auto">
+    <div class="row">
+    <div id="info" class="col-6 col-md px-5 py-3 mx-auto">
       <!-- star rating -->
       <p class="lead font-weight-normal">
         <span class="fa fa-star" style="color: salmon;"></span>
@@ -276,15 +277,89 @@
       <br>
       <div class="mb-2 text-muted">$100 / night</div>
       <a href="mailto:bear@firecnc.com">Contact Host</a>
-      <br>
-      <br>
-      <a class="btn btn-outline-dark px-3 py-2" href="/confirm">PAY NOW</a>
     </p>
+    </div>
+      <div class="col-6 col-md px-5 py-3 mx-auto">
+          <a
+            class="btn btn-outline-dark px-3 py-2"
+            id="check"
+            data-toggle="modal"
+            data-target="#availability"
+          >CHECK AVAILABILITY</a>
+          <!-- AVAILABILITY MODAL -->
+        <div
+        class="modal fade"
+        id="availability"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        <form class="was-validated">
+          <div class="form-group">
+              <label for="checkin">Check In</label>
+              <input
+                type="date"
+                class="form-control"
+                id="checkin"
+                required
+              />
+              <label for="checkout">Check Out</label>
+              <input
+                type="date"
+                class="form-control"
+                id="checkout"
+                required
+              />
+              <label for="guest">Number of Guests</label>
+              <select id="guest" class="form-control">
+                <option selected>Select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6+</option>
+              </select>
+
+            <div class="modal-footer">
+              <a href="/confirm">
+              <button
+                type="submit"
+                class="btn btn-primary"
+                style="background-color: salmon"
+              >
+                Check
+              </button>
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- AVAILABILITY MODAL -->
+      </div>
+  </div>
       <!-- INFORMATION -->
       <div class="row">
         <div class="col-6 col-md">
           <h4>Summary</h4>
-      <p class="lead font-weight-normal px-5 py-3 mx-auto">
+          <p class="lead font-weight-normal px-5 py-3 mx-auto">
         located in Downtown, Toronto
         <br>
         1 Room
