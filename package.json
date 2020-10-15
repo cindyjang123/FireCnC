@@ -10,7 +10,9 @@
   "author": "",
   "license": "Igit SC",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "multer": "^1.4.2",
+    "nodemailer": "^6.4.14"
   },
   "devDependencies": {
     "prettier": "2.1.2"
