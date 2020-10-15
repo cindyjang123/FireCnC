@@ -1,294 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- BOOTSTRAP CSS -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- JS -->
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <!-- ICON PACK -->
-      <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- GOOGLE FONTS -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Book Now</title>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+    <title> booking | firecnc</title>
   </head>
-
-  <!-- NAVIGATION BAR -->
-<nav class="navbar navbar-expand-md navbar-dark" style="background-color: salmon;">
-  <a class="navbar-brand" href='/'> <img src="images/logo.png" width="50" height="50" /><b>firecnc</b></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mx-auto">
-      <li class="nav-item">
-        <a class="nav-link px-5" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-5" href="/room">Listings</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-5" id= "register" data-toggle="modal" data-target="#exampleModalCenter">Register</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link px-5" id= "login" data-toggle="modal" data-target="#loginModal">Log In</a>
-      </li>
-    </ul>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Enter City" aria-label="Search">
-      <a href="/room"><button class="btn btn-light my-sm-0" type="submit">Search</button></a>
-    </form>
-  </div>
-</nav>
-<!-- NAVIGATION -->
-
-<!-- USER REGISTRATION MODAL -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle" style="text-align:center;">User Registration</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="was-validated">
-            <div class="form-group">
-              <label for="inputEmail4">Email</label>
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email" required>
-              <div class="invalid-feedback">Please input valid e-mail address</div>
-              <label for="inputPassword4">Password</label>
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password" required>
-              <div class="invalid-feedback">Password must be at least 8 characters</div>
-            </div>
-            <div class="form-group">
-          <div class="custom-control custom-radio" >
-            <input type="radio" class="custom-control-input" id="customControlValidation2" name="radio-stacked" required>
-            <label class="custom-control-label" for="customControlValidation2">Become a host</label>
-          </div>
-        </div>
-
-          <div class="custom-control custom-radio mb-3">
-            <input type="radio" class="custom-control-input" id="customControlValidation3" name="radio-stacked" required>
-            <label class="custom-control-label" for="customControlValidation3">Become a boarder</label>
-          </div>
-
-          <div class="form-group">
-            <label for="inputAddress">Address</label>
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" required>
-          </div>
-          <div class="form-group">
-            <label for="inputAddress2">Address 2</label>
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="inputCity">City</label>
-              <input type="text" class="form-control" id="inputCity" required>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="inputState">Province</label>
-              <select id="inputState" class="form-control">
-                <option selected>Select</option>
-                <option>Ontario</option>
-                <option>Quebec</option>
-                <option>Alberta</option>
-                <option>British Columbia</option>
-              </select>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="postalcode">Postal Code</label>
-              <input type="text" class="form-control" id="postalcode" required>
-            </div>
-          </div>
-          <div class="form-group" >
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck" required>
-              <label class="form-check-label" for="gridCheck">
-                I agree to the <a href=#>Terms & Conditions</a>
-              </label>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="submit" class="btn btn-primary" style="background-color: salmon;">Register</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- USER REGISTRATION MODAL -->
-
-<!-- LOGIN MODAL -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-body">
-        <form class="was-validated" action="action_page.php" id="loginForm" method="POST">
-          <div class="form-group">
-            <label for="uname"><b>Username</b></label>
-            <br>
-            <input type="text" class="form-control" placeholder="Enter Username" name="uname" required>
-            <br>
-            <label for="psw"><b>Password</b></label>
-            <br>
-            <input type="password" class="form-control" placeholder="Enter Password" name="psw" required>
-            <br>
-            <button type="submit" class="btn btn-primary btn-lg btn-block" style="background-color: salmon;">Login</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- LOGIN MODAL -->
+  
+  <!-- NAVIGATION BAR-->
+  <div id="nav-placeholder"></div>
+  <script>$(function(){$("#nav-placeholder").load("nav.html");});</script>
+  <!-- NAVIGATION BAR-->
 
   <!-- CONTENT -->
   <body>
-  <div id="container" class="lead font-weight-normal px-5 py-5 mx-auto">
-    <h3><b>Bear's Clean Room</b></h3>
-    <br>
-    <center><img src="images/bedroom.jpg" alt="living room" width="90%"/></center>
+      <div id="container" class="lead font-weight-normal px-5 py-5 mx-auto">
+        <h3><b>Bear's Clean Room</b></h3>
+        <br>
+        <center><img src="images/bedroom.jpg" alt="living room" width="90%"/></center>
+        <div class="row">
+        <div id="info" class="col-6 col-md px-5 py-3 mx-auto">
+          <!-- star rating -->
+          <p class="lead font-weight-normal">
+            <span class="fa fa-star" style="color: salmon;"></span>
+            <span class="fa fa-star"style="color: salmon;"></span>
+            <span class="fa fa-star"style="color: salmon;"></span>
+            <span class="fa fa-star"style="color: salmon;"></span>
+            <span class="fa fa-star"></span>
+          <!-- star rating -->
+          <b>12 reviews</b>
+          <br>
+          <div class="mb-2 text-muted">$100 / night</div>
+          <a href="mailto:bear@firecnc.com">Contact Host</a>
+        </p>
+        </div>
+          <div class="col-6 col-md px-5 py-3 mx-auto">
+              <a
+                class="btn btn-outline-dark px-3 py-2"
+                id="check"
+                data-toggle="modal"
+                data-target="#availability"
+              >CHECK AVAILABILITY</a>
+              <!-- AVAILABILITY MODAL -->
+            <div
+            class="modal fade"
+            id="availability"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="exampleModalCenterTitle"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+          <div class="modal-body">
+            <form class="was-validated">
+              <div class="form-group">
+                  <label for="checkin">Check In</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="checkin"
+                    required
+                  />
+                  <label for="checkout">Check Out</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="checkout"
+                    required
+                  />
+                  <label for="guest">Number of Guests</label>
+                  <select id="guest" class="form-control">
+                    <option selected>Select</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6+</option>
+                  </select>
+
+                <div class="modal-footer">
+                  <a href="/confirm"><button
+                    type="button"
+                    class="btn btn-primary"
+                    style="background-color: salmon"
+                  >
+                    Check
+                  </button>
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- AVAILABILITY MODAL -->
+    </div>
+    </div>
+    <!-- INFORMATION -->
     <div class="row">
-    <div id="info" class="col-6 col-md px-5 py-3 mx-auto">
-      <!-- star rating -->
-      <p class="lead font-weight-normal">
-        <span class="fa fa-star" style="color: salmon;"></span>
-        <span class="fa fa-star"style="color: salmon;"></span>
-        <span class="fa fa-star"style="color: salmon;"></span>
-        <span class="fa fa-star"style="color: salmon;"></span>
-        <span class="fa fa-star"></span>
-      <!-- star rating -->
-      <b>12 reviews</b>
+      <div class="col-6 col-md">
+        <h4>Summary</h4>
+        <p class="lead font-weight-normal px-5 py-3 mx-auto">
+      located in Downtown, Toronto
       <br>
-      <div class="mb-2 text-muted">$100 / night</div>
-      <a href="mailto:bear@firecnc.com">Contact Host</a>
+      1 Room
+      <br>
+      hosted by <b>Bear</b>
     </p>
-    </div>
-      <div class="col-6 col-md px-5 py-3 mx-auto">
-          <a
-            class="btn btn-outline-dark px-3 py-2"
-            id="check"
-            data-toggle="modal"
-            data-target="#availability"
-          >CHECK AVAILABILITY</a>
-          <!-- AVAILABILITY MODAL -->
-        <div
-        class="modal fade"
-        id="availability"
-        tabindex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalCenterTitle"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-        <button
-          type="button"
-          class="close"
-          data-dismiss="modal"
-          aria-label="Close"
-        >
-          <span aria-hidden="true">&times;</span>
-        </button>
       </div>
-
-      <div class="modal-body">
-        <form class="was-validated">
-          <div class="form-group">
-              <label for="checkin">Check In</label>
-              <input
-                type="date"
-                class="form-control"
-                id="checkin"
-                required
-              />
-              <label for="checkout">Check Out</label>
-              <input
-                type="date"
-                class="form-control"
-                id="checkout"
-                required
-              />
-              <label for="guest">Number of Guests</label>
-              <select id="guest" class="form-control">
-                <option selected>Select</option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6+</option>
-              </select>
-
-            <div class="modal-footer">
-              <a href="/confirm"><button
-                type="button"
-                class="btn btn-primary"
-                style="background-color: salmon"
-              >
-                Check
-              </button>
-            </a>
-          </div>
-        </form>
+      <div class="col-6 col-md">
+        <h4>Description</h4>
+        <p class="lead font-weight-normal px-5 py-3 mx-auto">
+        A nice clean room with all-inclusive amenities located in the heart of downtown Toronto. Perfect for 1 or 2 persons stay.
+        </p>
       </div>
     </div>
-  </div>
-</div>
-<!-- AVAILABILITY MODAL -->
-      </div>
-  </div>
-      <!-- INFORMATION -->
-      <div class="row">
-        <div class="col-6 col-md">
-          <h4>Summary</h4>
-          <p class="lead font-weight-normal px-5 py-3 mx-auto">
-        located in Downtown, Toronto
-        <br>
-        1 Room
-        <br>
-        hosted by <b>Bear</b>
-      </p>
-        </div>
-          <div class="col-6 col-md">
-            <h4>Description</h4>
-            <p class="lead font-weight-normal px-5 py-3 mx-auto">
-            A nice clean room with all-inclusive amenities located in the heart of downtown Toronto. Perfect for 1 or 2 persons stay.
-            </p>
-          </div>
-        </div>
     <!-- INFORMATION -->
 
     <!-- GOOGLE MAP -->
@@ -300,49 +148,18 @@
       </div>
     </div>
     <!-- GOOGLE MAP -->
+      </div>
+    </div>
     <!-- CONTENT -->
+  </body>
 
-  <!-- Footer -->
-  <footer class="container py-5">
-    <div class="row">
-      <div class="col-12 col-md">
-        <img src="images/logo.png" width="100" height="100" />
-      </div>
-      <div class="col-6 col-md">
-        <h5>Connect with us</h5>
-        <ul class="list-unstyled text-small">
-            <li>
-              <ion-icon name="logo-facebook"></ion-icon>
-              <a class="text-muted" href="https://www.facebook.com/" target="_blank">Facebook</a>
-            </li>
-            <li>
-              <ion-icon name="logo-instagram"></ion-icon>
-              <a class="text-muted" href="https://www.instagram.com/?hl=en" target="_blank">Instagram</a>
-            </li>
-            <li>
-              <ion-icon name="logo-twitter"></ion-icon>
-              <a class="text-muted" href="https://twitter.com/" target="_blank"> Twitter
-              </a>
-            </li>
-        </ul>
-      </div>
-      <div class="col-6 col-md">
-      <p>Subscribe to our newsletter: </p>          
-      <form action="https://formspree.io/mnqgweev"  target=”_blank” method="POST" name="newsletter">
-          <input type="email" placeholder="e-mail" name="mail" required>
-          <label>
-          <input type="submit" value="Subscribe">
-      </form>
-    </div>
-      <div class="col-6 col-md">
-        <h5>About</h5>
-        <ul class="list-unstyled text-small">
-          <li><a class="text-muted" href="#">Meet the Team</a></li>
-          <li><a class="text-muted" href="#">Contact us</a></li>
-          <li><a class="text-muted" href="#">Terms & Conditions</a></li>            
-        </ul>
-      </div>
-    </div>
-  <!-- Footer -->
-</body>
+  <!-- FOOTER-->
+  <div id="footer-placeholder"></div>
+  <script>
+    $(function () {
+      $('#footer-placeholder').load('footer.html');
+    });
+  </script>
+  <!-- FOOTER-->
+  
 </html>

@@ -1,0 +1,44 @@
+<form action="">
+  <label for="city">City</label>
+  <input type="text" autocomplete="on" name="city" placeholder="city" />
+  <br />
+  <label for="checkIn">Check In</label>
+  <input id="checkIn" type="date" min="1899-01-01" name="checkIn" />
+  <br />
+
+  <label for="checkOut">Check Out</label>
+  <input
+    id="checkOut"
+    type="date"
+    min="1899-01-01"
+    max="2021-13-13"
+    name="checkOut"
+  />
+  <br />
+
+  <label for="guest">Number of Guests</label>
+  <input id="guest" type="number" min="1" max="12" value="1" name="guest" />
+  <br />
+
+  <button type="submit">Search</button>
+</form>
+
+<script>
+  function minDate() {
+    var today = new Date();
+    var dd = today.getDate();
+    var mm = today.getMonth() + 1;
+    var yyyy = today.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+
+    today = yyyy + '-' + mm + '-' + dd;
+    document.getElementById('checkIn').setAttribute('min', today);
+    document.getElementById('checkOut').setAttribute('min', today);
+  }
+  minDate();
+</script>
