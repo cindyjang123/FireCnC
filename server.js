@@ -6,7 +6,9 @@ var path = require('path');
 var multer = require('multer');
 var nodemailer = require('nodemailer');
 
+//create storage properties
 const STORAGE = multer.diskStorage({
+  //saved on Hard Drive
   destination: './public/photos/',
   filename: function (req, file, cb) {
     cb(null, Date.now() + path.extname(file.originalname));
@@ -15,11 +17,12 @@ const STORAGE = multer.diskStorage({
 
 const UPLOAD = multer({ storage: STORAGE });
 
+// EMAIL LOGIN SETUP
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'web322.firecnc@gmail.com', //your email account
-    pass: '1qq2ww3ee4rr0', // your password
+    user: 'web322.firecnc@gmail.com',
+    pass: '1qq2ww3ee4rr0',
   },
 });
 
@@ -27,29 +30,27 @@ function onHttpStart() {
   console.log(`Express http server listening on ${HTTP_PORT}`);
 }
 
+//HANDLEBAR
 app.engine('.hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
 
+//STATIC FILES
 app.use(express.static(path.join(__dirname, '/views')));
 app.use(express.static(path.join(__dirname, '/public')));
 
 app.get('/', function (req, res) {
-  // res.sendFile(path.join(__dirname, '/views/index.html'));
   res.render('index', { layout: false });
 });
 
 app.get('/room', function (req, res) {
-  // res.sendFile(path.join(__dirname, '/views/room.html'));
   res.render('room', { layout: false });
 });
 
 app.get('/book', function (req, res) {
-  // res.sendFile(path.join(__dirname, '/views/booknow.html'));
   res.render('booknow', { layout: false });
 });
 
 app.get('/confirm', function (req, res) {
-  // res.sendFile(path.join(__dirname, '/views/confirmation.html'));
   res.render('confirmation', { layout: false });
 });
 
@@ -57,6 +58,7 @@ app.get('/registered', function (req, res) {
   res.render('registered', { layout: false });
 });
 
+//SET UP ROUTE
 app.post('/registration', UPLOAD.single('photo'), (req, res) => {
   const FORM_DATA = req.body;
   const FORM_FILE = req.file;
@@ -79,6 +81,7 @@ app.post('/registration', UPLOAD.single('photo'), (req, res) => {
     }
   });
 
+  //REDIRECT TO "REGISTERED" PAGE
   res.render('registered', { layout: false });
 });
 
