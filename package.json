@@ -11,6 +11,7 @@
   "license": "Igit SC",
   "dependencies": {
     "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
     "multer": "^1.4.2",
     "nodemailer": "^6.4.14"
   },

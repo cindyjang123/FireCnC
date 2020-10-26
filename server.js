@@ -1,6 +1,9 @@
 const HTTP_PORT = process.env.PORT || 8080;
 const express = require('express');
+const exphbs = require('express-handlebars');
+
 const app = express();
+
 var path = require('path');
 var multer = require('multer');
 var nodemailer = require('nodemailer');
@@ -26,38 +29,29 @@ function onHttpStart() {
   console.log(`Express http server listening on ${HTTP_PORT}`);
 }
 
+app.engine('.hbs', exphbs({ extname: '.hbs' }));
+app.set('view engine', '.hbs');
+
 app.use(express.static(path.join(__dirname, '/views')));
 
-// app.get('/', (req, res) => {
-//   res.sendFile(`${__dirname}/views/index.html`);
-// });
-
-// app.get('/room', (req, res) => {
-//   res.sendFile(`${__dirname}/views/room.html`);
-// });
-
-// app.get('/book', (req, res) => {
-//   res.sendFile(`${__dirname}/views/booknow.html`);
-// });
-
-// app.get('/confirm', (req, res) => {
-//   res.sendFile(`${__dirname}/views/confirmation.html`);
-// });
-
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, '/views/index.html'));
+  // res.sendFile(path.join(__dirname, '/views/index.html'));
+  res.render('index', { layout: false });
 });
 
 app.get('/room', function (req, res) {
-  res.sendFile(path.join(__dirname, '/views/room.html'));
+  // res.sendFile(path.join(__dirname, '/views/room.html'));
+  res.render('room', { layout: false });
 });
 
 app.get('/book', function (req, res) {
-  res.sendFile(path.join(__dirname, '/views/booknow.html'));
+  // res.sendFile(path.join(__dirname, '/views/booknow.html'));
+  res.render('booknow', { layout: false });
 });
 
 app.get('/confirm', function (req, res) {
-  res.sendFile(path.join(__dirname, '/views/confirmation.html'));
+  // res.sendFile(path.join(__dirname, '/views/confirmation.html'));
+  res.render('confirmation', { layout: false });
 });
 
 // app.post('/contact-form-process', UPLOAD.single('photo'), (req, res) => {
