@@ -68,8 +68,8 @@ app.post('/registration', UPLOAD.single('photo'), (req, res) => {
     from: 'web322.firecnc@gmail.com',
     to: FORM_DATA.email,
     subject: `Welcome to FireCnC, ${FORM_DATA.uname}`,
-    html: `<p>Hello, ${FORM_DATA.fname} ${FORM_DATA.lname}</p>
-      <p>Welcome to FireCnC. Thank you for registering with us</p>`,
+    html: `<p>Hello, ${FORM_DATA.fname} ${FORM_DATA.lname}!</p>
+      <p>Welcome to FireCnC. Thank you for registering with us.</p>`,
   };
 
   //SEND EMAIL
