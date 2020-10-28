@@ -1,5 +1,5 @@
 # WEB322 Assignment 2
-[[ HEROKU WEBSITE ](https://firecnc.herokuapp.com/) | [ YOUTUBE VIDEO ](https://firecnc.herokuapp.com/)]
+[[ HEROKU WEBSITE ](https://firecnc.herokuapp.com/) | [ YOUTUBE VIDEO ](youtu.be/sFbiryPqjnY)]
 
 This repository is for education purposes and Professor Clint MacDonald's viewing ONLY.
 
