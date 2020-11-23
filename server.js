@@ -1,10 +1,21 @@
-const HTTP_PORT = process.env.PORT || 8080;
 const express = require('express');
-const exphbs = require('express-handlebars');
 const app = express();
-var path = require('path');
 var multer = require('multer');
+var path = require('path');
+const _ = require('underscore');
+const fs = require('fs');
+const exphbs = require('express-handlebars');
 var nodemailer = require('nodemailer');
+const mongoose = require('mongoose');
+const PhotoModel = require('./models/photoModel');
+const PHOTODIRECTORY = './public/photos/';
+const HTTP_PORT = process.env.PORT || 8080;
+
+const config = require('./js/config');
+const connectionString = config.database_connection_string;
+
+// use bluebird promise library with mongoose
+mongoose.Promise = require('bluebird');
 
 //create storage properties
 const STORAGE = multer.diskStorage({
