@@ -45,161 +45,17 @@
         <a class="nav-link px-5" href="/room">Listings</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link px-5" id="register" data-toggle="modal" data-target="#registerModal">Register</a>
+        <a class="nav-link px-5" href="/register">Register</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link px-5" id="login" data-toggle="modal" data-target="#loginModal">Log In</a>
+        <a class="nav-link px-5" href="/login">Log In</a>
       </li>
     </ul>
   </div>
 </nav>
 <!-- NAVIGATION -->
 
-<!-- USER REGISTRATION MODAL -->
-<div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalTitle"
-  aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title">Create an Account</h4>
-      </div>
-      <div class="modal-body">
-        <form class="was-validated" action="/registration" method="POST" enctype="multipart/form-data">
-          <label for="uname"> Username </label>
-          <input type="text" class="form-control" id="uname" name="uname" minlength="6" pattern="[A-Za-z0-9]+"
-            required />
-          <div class="invalid-feedback">must be at least 6 characters</div>
-          <label for="password">Password</label>
-          <input type="password" class="form-control" id="password" name="password" minlength="8" maxlength="25"
-            pattern="^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$" required />
-          <div class="invalid-feedback">
-            must be minimum 8 characters, include one letter, one number and
-            one special character (@$!%*#?&])
-          </div>
-          <label for="fname"> First Name </label>
-          <input type="text" class="form-control" id="fname" name="fname" pattern="[A-Za-z/s]+" required />
-          <div class="invalid-feedback">must contain only alphabetical characters</div>
-          <label for="lname"> Last Name </label>
-          <input type="text" class="form-control" id="lname" name="lname" pattern="[A-Za-z/s]+" required />
-          <div class="invalid-feedback">must contain only alphabetical characters</div>
 
-          <label for="email">Email</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
-          <div class="invalid-feedback">
-            Please input valid e-mail address
-          </div>
-
-          <label for="address">Address</label>
-          <input type="text" class="form-control" id="address" placeholder="1234 Main St" required />
-          <div class="invalid-feedback">Please input valid address</div>
-
-          <label for="address2">Address 2 (optional)</label>
-          <input type="text" class="form-control" id="address2" name="address2"
-            placeholder="Apartment, studio, or floor" />
-          <br />
-          <div class="form-row">
-            <div class="form-group col-md-4">
-              <label for="city">City</label>
-              <input list="cities" class="form-control" name="city" id="city" pattern="[A-Za-z\s]+" required />
-              <datalist id="cities">
-                <option value="Toronto"></option>
-                <option value="Ottawa"></option>
-                <option value="Calgary"></option>
-                <option value="Edmonton"></option>
-                <option value="Vancouver"></option>
-                <option value="Montreal"></option>
-              </datalist>
-            </div>
-
-            <div class="form-group col-md-4">
-              <label for="province">Province</label>
-              <select id="province" name="province" class="form-control" required>
-                <option disabled selected value>Select</option>
-                <option>ON</option>
-                <option>BC</option>
-                <option>QC</option>
-                <option>AB</option>
-                <option>SK</option>
-                <option>MB</option>
-              </select>
-            </div>
-            <div class="form-group col-md-4">
-              <label for="postalcode">Postal Code</label>
-              <input type="text" class="form-control" id="postalcode" maxlength="6"
-                pattern="^([A-Za-z]\d[A-Za-z]\d[A-Za-z]\d)" placeholder="A1A1A1" required />
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="custom-control custom-radio mb-3">
-              <input type="radio" class="custom-control-input" id="boarder" name="userType" value="boarder" required
-                onclick="hide();" />
-              <label class="custom-control-label" for="boarder">Become a boarder</label>
-            </div>
-
-            <div class="custom-control custom-radio mb-3">
-              <input type="radio" class="custom-control-input" id="host" name="userType" value="host" required
-                onclick="visible();" />
-              <label class="custom-control-label" for="host">Become a host</label>
-              <div id="hidden">
-                <label for="photo">Upload Photo (optional)</label>
-                <input type="file" class="form-control" id="photo" name="photo" />
-              </div>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck" required />
-              <label class="form-check-label" for="gridCheck">
-                I agree to the
-                <a target="_blank" href="https://www.airbnb.ca/terms">Terms & Conditions</a>
-              </label>
-            </div>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">
-              Close
-            </button>
-            <button type="submit" class="btn btn-primary" style="background-color: salmon">
-              Register
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- USER REGISTRATION MODAL -->
-
-<!-- LOGIN MODAL -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h4 class="modal-title" style="margin: 0 auto;">LOGIN</h4>
-      </div>
-      <div class="modal-body">
-        <form class="was-validated" action="action_page.php" id="loginForm" method="POST">
-          <div class="form-group">
-            <label for="uname"><b>Username</b></label>
-            <br />
-            <input type="text" class="form-control" placeholder="Enter Username" name="uname" required />
-            <br />
-            <label for="psw"><b>Password</b></label>
-            <br />
-            <input type="password" class="form-control" placeholder="Enter Password" name="psw" required />
-            <br />
-            <button type="submit" class="btn btn-primary btn-lg btn-block" style="background-color: salmon">
-              Login
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- LOGIN MODAL -->
 </head>
 
 </html>
