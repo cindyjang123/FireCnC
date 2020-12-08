@@ -32,7 +32,44 @@
 
 <!-- Content -->
 
-<body>
+<!-- Content -->
+<div class="container white-container">
+  <h4>Rooms</h4>
+  {{#if data}}
+  <div class="card-columns">
+    {{#each data}}
+    <div class="card p-3" id={{_id}}>
+      <img class="card-img-top" src="/roomImages/{{roomphoto.[0]}}" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{roomtitle}}</h5>
+        <p class="card-text">{{description}}</p>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">${{price}} CAD/night</small>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+<!-- End Content -->
+<script>
+  window.onload = function () {
+    const card = document.getElementsByClassName("card");
+    for (let i = 0; i < card.length; i++) {
+      card[i].addEventListener("click", function (e) {
+        const selectedCard = card[i].parentElement.children[i];
+
+        fetch('/roomDescription/' + selectedCard.id, { method: 'POST' })
+          .then(function (response) {
+            console.log(response);
+          });
+      });
+    }
+  }
+</script>
+
+{{!-- <body>
   <div class="container">
     <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
       <h3 class="display-2">Listings in Toronto</h3>
@@ -164,9 +201,10 @@
         </div>
       </div>
     </div>
-  </div>
-  <!-- Content -->
-</body>
+  </div> 
+  </body>
+--}}
+<!-- Content -->
 
 <!-- FOOTER-->
 {{> footer}}

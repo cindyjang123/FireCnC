@@ -44,18 +44,25 @@
       <li class="nav-item">
         <a class="nav-link px-5" href="/room">Listings</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link px-5" href="/register">Register</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+          aria-expanded="false">{{#if user}} My Accounts {{else}}Login{{/if}}</a>
+        <div class="dropdown-menu">
+          {{#if user}}
+          <a class="dropdown-item" href="/dashboard">Dashboard</a>
+          <a class="dropdown-item" href="/logout">Log Out</a>
+          {{else}}
+          <a class="dropdown-item" href="/register">Sign Up</a>
+          <a class="dropdown-item" href="/login">Log In</a>
+          {{/if}}
+        </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link px-5" href="/login">Log In</a>
-      </li>
-    </ul>
+  </div>
+  </li>
+  </ul>
   </div>
 </nav>
 <!-- NAVIGATION -->
-
-
 </head>
 
 </html>

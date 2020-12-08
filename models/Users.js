@@ -2,18 +2,6 @@ var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs'); //bcryptjs
 var Schema = mongoose.Schema;
 
-mongoose.connect(
-  'mongodb+srv://sjang15:IM.nana_90@cluster0.akrlj.mongodb.net/firecnc?retryWrites=true&w=majority',
-  { useNewUrlParser: true, useUnifiedTopology: true }
-);
-const db = mongoose.connection;
-db.once('open', (_) => {
-  console.log('Database successfully connected!');
-});
-db.on('error', (err) => {
-  console.error('Error: database failed to connect', err);
-});
-
 var userSchema = new Schema({
   email: String,
   password: String,
