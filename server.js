@@ -75,9 +75,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //   res.render('index', { layout: false });
 // });
 
-app.get('/room', function (req, res) {
-  res.render('room', { layout: false });
-});
+// app.get('/room', function (req, res) {
+//   res.render('room', { layout: false });
+// });
 
 app.get('/book', function (req, res) {
   res.render('booknow', { layout: false });
@@ -112,15 +112,18 @@ app.get('/', function (req, res) {
     layout: false,
   });
 });
-
+//POST (/)
 app.post('/', async function (req, res) {
-  res.render('room', {
+  res.render('room_listing_page', {
     user: req.session.theUser,
     data: await Rooms.find({ location: req.body.location }).lean(),
-    layout: false,
+    layout: false, // do not use the default Layout (main.hbs)
   });
 });
+//---------------------------------------------- home -------------------------------------------------------
 
+//---------------------------------------------- roomlisting -------------------------------------------------------
+//setup a route on roomlisting
 app.get('/room', function (req, res) {
   Rooms.find({})
     .lean()
@@ -128,24 +131,32 @@ app.get('/room', function (req, res) {
       if (!rooms) {
         return res.render('room', {
           user: req.session.theUser,
-          error: 'No available listing',
-          layout: false,
+          error: 'There are no room listings at the moment',
+          layout: false, // do not use the default Layout (main.hbs)
         });
       }
       if (err) {
         return res.render('room', {
           user: req.session.theUser,
           error: err,
-          layout: false,
+          layout: false, // do not use the default Layout (main.hbs)
         });
       }
 
       res.render('room', {
         user: req.session.theUser,
         data: rooms,
-        layout: false,
+        layout: false, // do not use the default Layout (main.hbs)
       });
     });
+});
+
+app.post('/', async function (req, res) {
+  res.render('room', {
+    user: req.session.theUser,
+    data: await Rooms.find({ location: req.body.location }).lean(),
+    layout: false,
+  });
 });
 
 //---------------------------- UPLOAD ROOM IMAGES ---------//
