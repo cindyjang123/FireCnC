@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-var bcrypt = require('bcryptjs'); //bcryptjs
+var bcrypt = require('bcryptjs');
 
 var Schema = mongoose.Schema;
 
@@ -12,7 +12,7 @@ var roomSchema = new Schema({
   roomphoto: {
     type: [String],
     default: undefined,
-  }, //array of strings(room photo links)
+  },
   ownername: String,
   owneremail: String,
 });

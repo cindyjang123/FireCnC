@@ -23,23 +23,6 @@
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <!-- ICON PACK -->
   <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
-  <style>
-    .nav-container {
-      position: absolute;
-      width: 100%;
-      height: 10em;
-    }
-
-    .white-container {
-      padding: 10vw 0 3vw 0;
-      background-color: white;
-    }
-
-    .white-container.nobot {
-      padding: 3vw 0 0 0;
-      background-color: white;
-    }
-  </style>
   <title>listings | firecnc</title>
 </head>
 
@@ -48,28 +31,36 @@
 <!-- NAVIGATION BAR-->
 
 <!-- Content -->
-
-<!-- Content -->
-<div class="container white-container">
-  <h4>Rooms</h4>
+<div class="container">
   {{#if data}}
-  <div class="card-columns">
-    {{#each data}}
-    <div class="card p-3" id={{_id}}>
-      <img class="card-img-top" src="/roomImages/{{roomphoto.[0]}}" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">{{roomtitle}}</h5>
-        <p class="card-text">{{description}}</p>
+  <div class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+    <h5 class="display-2">Listings Available</h5>
+  </div>
+  {{#each data}}
+  <div class="row mb-2">
+    <div class="row no-gutters border mb-4 shadow-sm"
+      style="margin: auto; background-color: rgb(240, 240, 240); width: 80%;">
+      <div class="col-auto d-none d-lg-block">
+        <img src="/roomImages/{{roomphoto.[0]}}" width="250" height="270" />
       </div>
-      <div class="card-footer">
-        <small class="text-muted">${{price}} CAD/night</small>
+      <div class="col p-4 d-flex flex-column position-static">
+        <h5>{{roomtitle}}</h5>
+        <h7>{{location}}</h7>
+        <div class="mb-2 text-muted">${{price}} / night</div>
+        <p class="card-text mb-5">
+          {{description}}
+        </p>
+        <a href="/book"><button type="button" class="btn btn-danger">
+            Book Now!
+          </button></a>
       </div>
     </div>
-    {{/each}}
   </div>
+  {{/each}}
   {{/if}}
 </div>
-<!-- End Content -->
+
+<!-- Content -->
 <script>
   window.onload = function () {
     const card = document.getElementsByClassName("card");
