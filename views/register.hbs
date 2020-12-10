@@ -40,8 +40,9 @@
             <h2 class="display-3 px-3 py-3" style="color: whitesmoke">Create an Account</h2>
             <div class="px-4 py-4" style="margin: auto; background-color: rgb(235, 235, 235); height: 80%; width: 40%;">
                 <!-- USER REGISTRATION -->
-                <form class="was-validated" action="/register" method="POST" style="margin: auto; width: 70%;">
-                    <label for="email">Email</label>
+                <form class="was-validated py-5" action="/register" method="POST"
+                    style="margin: auto; width: 70%; text-align: left;">
+                    <label for=" email">Email</label>
                     <input type="email" class="form-control" id="email" name="email" placeholder="Email" required />
                     <div class="invalid-feedback">
                         Please input valid e-mail address
@@ -115,7 +116,7 @@
                         </div>
                     </div> --}}
 
-                    {{!-- <div class="form-group">
+                    <div class="form-group">
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" id="gridCheck" required />
                             <label class="form-check-label" for="gridCheck">
@@ -123,7 +124,7 @@
                                 <a target="_blank" href="https://www.airbnb.ca/terms">Terms & Conditions</a>
                             </label>
                         </div>
-                    </div> --}}
+                    </div>
                     <div class="modal-footer">
                         <button type="submit" class="btn btn-primary" style="background-color: salmon">
                             Register
@@ -135,9 +136,6 @@
         </div>
     </div>
 </body>
-
-
-
 
 <!-- FOOTER-->
 {{> footer}}

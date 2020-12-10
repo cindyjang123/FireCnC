@@ -1,26 +1,38 @@
-<form action="">
-  <label for="city">City</label>
-  <input type="text" autocomplete="on" name="city" placeholder="city" />
-  <br />
-  <label for="checkIn">Check In</label>
-  <input id="checkIn" type="date" min="1899-01-01" name="checkIn" />
-  <br />
-
-  <label for="checkOut">Check Out</label>
-  <input
-    id="checkOut"
-    type="date"
-    min="1899-01-01"
-    max="2021-13-13"
-    name="checkOut"
-  />
-  <br />
-
-  <label for="guest">Number of Guests</label>
-  <input id="guest" type="number" min="1" max="12" value="1" name="guest" />
-  <br />
-
-  <button type="submit">Search</button>
+<form class="was-validated" action="/search" method="POST" style="margin: auto; width: 75%;">
+  <div id="container" style="margin: 1em;">
+    <div style="display: inline-block; *display: inline; zoom: 1; vertical-align: top; width: 20%;">
+      <label for=" city">City</label>
+      <select class="form-control" name="location" id="location">
+        <option value=""> </option>
+        <option value="Toronto">Toronto</option>
+        <option value="Ottawa">Ottawa</option>
+        <option value="Calgary">Calgary</option>
+        <option value="Edmonton">Edmonton</option>
+        <option value="Vancouver">Vancouver</option>
+        <option value="Montreal">Montreal</option>
+      </select>
+      <br />
+    </div>
+    <div style="display: inline-block; *display: inline; zoom: 1; vertical-align: top; width: 20%;">
+      <label for="checkIn">Check In</label>
+      <input id="checkIn" class="form-control" type="date" min="1899-01-01" name="checkIn" />
+      <br />
+    </div>
+    <div style="display: inline-block; *display: inline; zoom: 1; vertical-align: top; width: 20%;">
+      <label for="checkOut">Check Out</label>
+      <input id="checkOut" class="form-control" type="date" min="1899-01-01" max="2021-13-13" name="checkOut" />
+      <br />
+    </div>
+    <div style="display: inline-block; *display: inline; zoom: 1; vertical-align: top; width: 10%;">
+      <label for="guest">Guests</label>
+      <input id="guest" class="form-control" type="number" min="1" max="12" value="1" name="guest" />
+      <br />
+    </div>
+    <div
+      style="display: inline-block; *display: inline; zoom: 1; margin: 2em; vertical-align: top; height: 0%; width: 10%;">
+      <button type="submit" class="btn btn-primary" style="margin: auto; background-color: salmon">Search</button>
+    </div>
+  </div>
 </form>
 
 <script>

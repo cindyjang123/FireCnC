@@ -299,7 +299,6 @@ app.post(
 
 app.post('/dashboardDelete', ensureLogin, async function (req, res) {
   const v_roomID = req.body.roomID;
-  //findOneAndDelete(conditions, options, callback)
   Rooms.findOneAndDelete(v_roomID, function (err, updRoom) {
     if (err) {
       console.log(err);

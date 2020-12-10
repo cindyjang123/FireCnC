@@ -174,7 +174,27 @@
                         </div>
                         <hr><br>
                         <br><br>
-                        <button type="submit" class="btn btn-outline-danger px-3 py-2">Delete Room</button>
+                        <a href="#confirmModal" class="trigger-btn" data-toggle="modal"><button type="button"
+                                class="btn btn-outline-danger px-3 py-2">Delete</button></a>
+                        <!-- Confirmation Modal -->
+                        <div id="confirmModal" class="modal fade">
+                            <div class="modal-dialog modal-confirm">
+                                <div class="modal-content">
+                                    <div class="modal-header flex-column">
+                                        <h4 class="modal-title w-100">Are you sure?</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Do you really want to delete this room? This process cannot be undone.
+                                        </p>
+                                    </div>
+                                    <div class="modal-footer justify-content-center">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-dismiss="modal">Cancel</button>
+                                        <button type="submit" class="btn btn-outline-danger px-3 py-2">Confirm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
