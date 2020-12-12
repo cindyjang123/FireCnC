@@ -1,4 +1,4 @@
-# WEB322 Assignment 2
+# WEB322 Final Assignment
 
 #### by Cindy Jang
 
